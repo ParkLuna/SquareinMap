@@ -1,6 +1,14 @@
+try:
+    input_numbers = input("Enter a list of numbers separated by spaces: ").split()
+    input_numbers = list(map(float, input_numbers))
+except ValueError:
+    print("Invalid input. Please enter a valid list of numbers separated by spaces.")
+    exit()
+
 def square_number(num):
     return num ** 2
-sample_list = [4, 5, 2, 9]
-result_list = list(map(square_number, sample_list))
-print("Square the elements of the list:")
-print(result_list)
+
+squared_numbers = list(map(square_number, input_numbers))
+
+print("Original List:", input_numbers)
+print("Squared List:", squared_numbers)
